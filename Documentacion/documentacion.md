@@ -10,25 +10,53 @@ Participantes:
 	- Espino De Horta Joaquín Gustavo
 	
 Profesor: Dr. Ismael Everardo Barcenas Patiño
-Título : Proyecto 2
-Subtítulo : Fórmula de lógica proposicional valida o no
+Título : Proyecto 
+Subtítulo : Inferencia bayesiana
+Fecha entrega: 05/05/2022
 
 ```
+
+# Capítulo 0 Estructura del  repositorio
 
 # Definición del problema
 
-#  Capítulo 0 Estructura del  repositorio
+## Clasificación Bayesiana
 
-El repositorio documenta todo el proceso hecho para realizar el programa , incluyendo los pdf´s  
+#  
 
-## Bibliotecas usadas
+# Solución
 
-```tex
-\usespackage{prof}
-\usespackage{bussproofs}
-```
+## Pseudocódigo
 
-Para poder ejecutar el programa es necesario tener instalado un interprete de `prolog` para poder ejecutar el programa.
+## Explicación
+
+# Experimentos
+
+## Baja dificultad
+
+### Problema 1
+
+### Problema 2
+
+### Problema 3
+
+## Media dificultad
+
+### Problema 1
+
+### Problema 2
+
+### Problema 3
+
+## Alta dificultad
+
+### Problema 1
+
+### Problema 2
+
+### Problema 3
+
+## Sin solución
 
 # Capítulo 1  Introducción 
 
@@ -59,3 +87,20 @@ Para poder ejecutar el programa es necesario tener instalado un interprete de `p
 ## Barrera Peña Víctor Miguel
 
 ## Espino de Horta Joaquín Gustavo
+
+
+
+# Anexo (teoría)
+
+**Definición 1** (Experimentos aleatorios). Un experimento con diferentes resultados, incluso si es repetido en la misma manera, se llama un experimento aleatorio.
+
+**Definición 2** (Espacio muestra). El conjunto de todos los posibles resultados de un experimento aleatorio, se llama el espacio muestra del experimento.
+Ejemplo:
+$$
+\begin{align}
+& S= \mathbb{R} + = \{x \in \mathbb{R}|x >0\} \\
+& S= \{x \in N | 10 < x <20\} \\
+& S=\{low,medium,light\} \\
+& S= \{yes.not\}
+\end{align}
+$$
