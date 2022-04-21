@@ -315,6 +315,39 @@ $$
 P(A \cup B)= P(A) +(B) - P(A )ls
 $$
 
+**Definición** (Regla de la adición).
+
+​	
+$$
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+$$
+**Ejemplo** 
+
+Considere la tabla abajo con el historial de producción de 949 semiconductores. Suponga que un semiconductor es elegido aleatoriamente. Considere $M$ denota el evento de que el semiconductor contiene niveles altos de contaminación. C es el evento cuando el semiconductor se encuentra en el centro de una herramienta de pulverización.
+$$
+P(H \cup C)= P(H) + P(C) - P(H \cap C)=\frac{1}{940} (358+626 -112)= \frac{872}{940}
+$$
+
+
+![](C:\Users\DELL\Documents\Proyectos\Proyecto3_Inteligencia_Artificial\Documentacion\img\table1.png)
+
+**Ejemplo:** En el mismo contexto del ejemplo anterior, considere $E_1$ el evento de que un semiconductor contiene 4 o más partículas contaminantes, $E2$ es el evento de que un semiconductor se encuentra en la orilla de la herramienta.
+$$
+P(E_1 \cap E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2) = 
+$$
+
+
+![]()
+
+**Ejercicios**
+
+Si P(A) = 0.3, P(B) = 0.2, y P(A ∩ B) = 0.1, determine las siguientes probabilidades:
+$$
+\begin{array}{lll}
+P\left(A^{c}\right) & P(A \cup B) & P\left(A^{c} \cap B\right) \\
+P\left(A \cap B^{c}\right) & P\left((A \cup B)^{c}\right) & P\left(A^{c} \cup B\right)
+\end{array}
+$$
 
 # Clase de hoy
 
