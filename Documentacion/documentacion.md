@@ -256,7 +256,7 @@ $$
 \text { Para cualquier evento } A, P(A)+P\left(A^{\prime}\right)=1 \text {, a partir de la cual } P(A)=1-P\left(A^{\prime}\right) \text {. }
 $$
 
-Comprobación En el axioma 3 , sea $k=2, A_{1}=A$ y $A_{2}=A^{\prime}$. Como por definición de $A^{\prime}, A \cup A^{\prime}=\mathcal{S}$ en tanto $A$ y $A^{\prime}$ sean eventos disjuntos, $1=P(\mathcal{S})=P\left(A \cup A^{\prime}\right)=$  $P(A)+P\left(A^{\prime}\right)$
+Comprobación En el axioma 3 , sea  $k=2, A_{1}=A$ y $A_{2}=A^{\prime}$  . Como por definición de $A^{\prime}, A \cup A^{\prime}=\mathcal{S}$ en tanto $A$ y $A^{\prime}$ sean eventos disjuntos, $1=P(\mathcal{S})=P\left(A \cup A^{\prime}\right)=$  $P(A)+P\left(A^{\prime}\right)$
 
 
 $$
@@ -298,4 +298,120 @@ $$
 Considere las emisiones de tres fabricas clasificadas por su calidad. De la primera fábrica 22 muestras de emisiones cumplen con el mínimo, y 8 no lo hacen; 25 cumplen con el mínimo y 5 no, en el caso de la segunda fábrica; en cuanto a la tercera, 30 cumplen y 10 no. Considere A denota el evento de las muestras de emisiones de la primera fábrica, y B como el evento de una muestra cumple con el mínimo. Calcule las siguientes probabilidades.
 $$
 P(A) \quad P(B) \quad P\left(A^{c}\right) \quad P(A \cap B) \quad P(A \cup B) \quad P\left(A^{c} \cup B\right)
+$$
+**Solución:**
+$$
+\begin{align}
+P(A) &= \frac{22+8}{100} = 0.3\\
+P(B) &= \frac{22+25+30}{100}\\
+P\left(A^{c}\right)&= \frac{70}{100} \\
+P(A \cap B)&= \frac{22}{100}\\
+P(A \cup B) &= \frac{22+25+30}{100} \\
+P\left(A^{c} \cup B\right)& = \frac{70+8}{100}
+\end{align}
+$$
+**Definición 8** (regla de la adición).
+$$
+P(A \cup B)= P(A) +(B) - P(A )ls
+$$
+
+
+# Clase de hoy
+
+**Ejemplo.** Considere la siguiente base de datos.
+
+| Usuario | Género | Calificación |
+| ------- | ------ | ------------ |
+| F       | Terror | 1            |
+| M       | Acción | 3            |
+| F       | Drama  | 2            |
+| M       | Drama  | 2            |
+| F       | Acción | 2            |
+| M       | Terror | 3            |
+|         |        |              |
+|         |        |              |
+|         |        |              |
+
+
+
+## Eejmplo
+
+## Ejercicios.
+
+Considere la siguiente base de datos.
+
+| #    | Productora | Usuario | Género | Calificación |
+| ---- | ---------- | ------- | ------ | ------------ |
+| 1    | Universal  | F       | Terror | 1            |
+| 2    | Universal  | M       | Acción | 3            |
+| 3    | Warner     | F       | Drama  | 2            |
+| 4    | Disney     | M       | Drama  | 2            |
+| 5    |            |         |        |              |
+| 6    |            |         |        |              |
+| 7    |            |         |        |              |
+| 8    |            |         |        |              |
+| 9    |            |         |        |              |
+| 10   |            |         |        |              |
+| 11   |            |         |        |              |
+| 12   |            |         |        |              |
+| 13   |            |         |        |              |
+| 14   |            |         |        |              |
+| 15   |            |         |        |              |
+
+Calcule la calificación que otorgará un usuario $F$ a una película de Acción producida Warner.
+$$
+P(1) \cdot P(F|1) \cdot P(A|1) \cdot P(W | 1) \\
+=\frac{4}{15} \cdot \frac{1}{4} \cdot \frac{1}{4} \cdot \frac{1}{4} = \frac{4}{960}=0.0041\overline{6}
+$$
+
+$$
+P(2) \cdot P(F|2) \cdot P(A|2) \cdot P(W | 2) \\
+=\frac{6}{15} \cdot \frac{4}{6} \cdot \frac{3}{6} \cdot \frac{3}{6} = \frac{216}{3240}=0.0666\overline{6}
+$$
+
+$$
+P(3) \cdot P(F|3) \cdot P(A|3) \cdot P(W | 3) \\
+=\frac{5}{15} \cdot \frac{3}{5} \cdot \frac{1}{5} \cdot \frac{1}{5} = \frac{15}{1,875}=0.0026\overline{6}
+$$
+
+## Ejercicio
+
+|      |      |      |      |      |      |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+|      |      |      |      |      |      |
+
+$$
+P(1) \cdot P(M|1) \cdot P(Terror|1) \cdot P(Universal | 1) \cdot P(Bañuel | 1) \\
+=\frac{7}{22} \cdot \frac{5}{7} \cdot \frac{3}{7} \cdot \frac{3}{7} \cdot \frac{2}{7} = \frac{45}{3773}=0.0119268
+$$
+
+$$
+P(2) \cdot P(M|2) \cdot P(Terror|2) \cdot P(Universal | 2) \cdot P(Bañuel | 2) \\
+=\frac{8}{22} \cdot \frac{2}{7} \cdot 0 \cdots =0
+$$
+
+$$
+P(3) \cdot P(M|3) \cdot P(Terror|3) \cdot P(Universal | 3) \cdot P(Bañuel | 3) \\
+=\frac{7}{22} \cdot \frac{4}{7} \cdot \frac{4}{7} \cdot \frac{4}{7} \cdot \frac{2}{7} = \frac{896}{52,822}=0.0169626
 $$
