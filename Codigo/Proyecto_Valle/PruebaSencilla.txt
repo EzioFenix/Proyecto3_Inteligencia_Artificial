@@ -1,0 +1,17 @@
+2,16
+Categoria,Calificacion
+terror,3
+terror,1
+terror,2
+terror,3
+comedia,5
+comedia,1
+comedia,1
+comedia,2
+comedia,2
+comedia,2
+comedia,2
+romance,2
+romance,3
+romance,3
+romance,4
