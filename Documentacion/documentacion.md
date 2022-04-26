@@ -333,7 +333,7 @@ $$
 
 **Ejemplo:** En el mismo contexto del ejemplo anterior, considere $E_1$ el evento de que un semiconductor contiene 4 o más partículas contaminantes, $E2$ es el evento de que un semiconductor se encuentra en la orilla de la herramienta.
 $$
-P(E_1 \cap E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2) = 
+P(E_1 \cap E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2) =
 $$
 
 
@@ -348,6 +348,42 @@ P\left(A^{c}\right) & P(A \cup B) & P\left(A^{c} \cap B\right) \\
 P\left(A \cap B^{c}\right) & P\left((A \cup B)^{c}\right) & P\left(A^{c} \cup B\right)
 \end{array}
 $$
+
+**Definición 9 **(Probabilidad condicional) . La proba
+
+# 8
+
+- Calcule la probabilidad de que el inspector detecte un objeto defecuso
+
+# 9
+
+**Ejemplo.** Considere la siguiente base de datos.
+
+| #    | Usuario | Género | Calificación |
+| ---- | ------- | ------ | ------------ |
+| 1    | F       | Terror | 1            |
+| 2    | M       | Acción | 3            |
+| 3    | F       | Drama  | 2            |
+| 4    | M       | Drama  | 2            |
+| 5    | F       | Acción | 2            |
+| 6    | M       | Terror | 3            |
+| 7    | F       | Terror | 3            |
+| 8    | M       | Drama  | 1            |
+| 9    | F       | Acción | 2            |
+
+Calcule la calificación que le pondría un usuario $M$ a una película de Drama.
+$$
+\begin{aligned}
+&P(1) P(\mathrm{M} \mid 1) P(\text { Drama } \mid 1)=2 / 9 * 1 / 2 * 1 / 2=1 / 18 \\
+&P(2) P(\mathrm{M} \mid 2) P(\text { Drama } \mid 2)=4 / 9 * 1 / 4 * 1 / 2=1 / 18 \\
+&P(3) P(\mathrm{M} \mid 3) P(\text { Drama } \mid 3)=1 / 3 * 2 / 3 * 0=0
+\end{aligned}
+$$
+Entonces el usuario califica con $2$  o $1$ a la película de Drama.
+
+## Ejercicio
+
+Implemente un algoritmo para el modelo de clasificación Bayesiana.
 
 # Clase de hoy
 
