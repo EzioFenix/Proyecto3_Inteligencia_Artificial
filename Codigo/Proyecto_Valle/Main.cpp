@@ -40,14 +40,37 @@ std::string* getDataBase(const std::string id) {
 				index++;
 			}
 		}
-		std::cout << std::endl;
+		std::getline(archive, line);
 		begin = 0;
 	}
 	std::cout << "Se han leido los datos correctamente...\n";
 	return data;
 }
+void printData(std::string* matrix) {
+	for (int i = 0; i < HEIGHT; i++) {
+		for (int j = 0; j < WIDTH; j++)
+			std::cout << "|\t" << matrix[(i * WIDTH) + j] << "\t";
+		std::cout << "|\n";
+	}
+}
+int timesByCategory(std::string* matrix, std::string category, std::string name) {
+	int j = 0, count = 0; bool notFound = true; 
+	while (notFound)
+		if (!matrix[j].compare(category))
+			notFound = false;
+		else if (j > WIDTH)
+			return count;
+		else
+			j++;
+	for (int i = 1; i < HEIGHT; i++)
+		if (!matrix[i * WIDTH + j].compare(name))
+			count++;
+	return count;
+}
 
 int main() {
-	getDataBase("PruebaSencilla.txt");
+	std::string* data = getDataBase("PruebaSencilla.txt");
+	printData(data);
+	std::cout << timesByCategory(data, "Categoria", "comedia") << std::endl;
 	return 0;
 }
