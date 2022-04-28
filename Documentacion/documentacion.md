@@ -18,15 +18,69 @@ Fecha entrega: 05/05/2022
 
 # Capítulo 0 Estructura del  repositorio
 
+```yaml
+.
+├── Codigo
+├── Diapositivas
+├── Documentacion
+├── LICENSE
+├── Material_ayuda
+└── README.md
+```
+
+
+
 # Definición del problema
 
 ## Clasificación Bayesiana
 
-#  
-
-# Solución
+#  Solución
 
 ## Pseudocódigo
+
+```python
+inicio main():
+    Datos= cargarDatos(nombre)
+
+	Condiciones <= input()
+	Cuestion	<= input()
+
+	real 	probabilidad = 1.0, masProbable = 0.0
+	cadena  Argumento = "No hay coincidencias", Objetivo, Regla 
+
+	por_cada Objetivo en obten_coleccion(Cuestion) realiza:
+
+		probabilidad = obten_Probabilidad(Datos,Objetivo)
+
+		por_cada Regla en obten_coleccion(Condiciones) realiza:
+
+			probabilidad = probabilidad * obten_Probabilidad(Datos,Objetivo,Regla)
+
+		fin_bucle
+
+		si (probabilidad > masProbable) entonces:
+
+			mas probable <= probabilidad
+			Argumento	 <= Objetivo
+
+		fin_condicion
+
+	fin_bucle
+
+	imprimir(Argumento)
+
+fin_main
+
+inicio obten_Probabilidad(Datos,Objetivo):
+	retorna	veces_En_Categoria(Datos,Objetivo) / (Datos.Altura - 1)
+fin_obten_Probabilidad
+
+inicio obten_Probabilidad(Datos,Objetivo,Regla):
+	retorna	coincidencia(Datos,Objetivo,Regla) / veces_En_Categoria(Datos,Objetivo)
+fin_obten_Probabilidad
+```
+
+
 
 ## Explicación
 
@@ -403,9 +457,9 @@ Implemente un algoritmo para el modelo de clasificación Bayesiana.
 
 
 
-## Eejmplo
+## Ejemplo
 
-## Ejercicios.
+## Ejercicios
 
 Considere la siguiente base de datos.
 
@@ -415,17 +469,17 @@ Considere la siguiente base de datos.
 | 2    | Universal  | M       | Acción | 3            |
 | 3    | Warner     | F       | Drama  | 2            |
 | 4    | Disney     | M       | Drama  | 2            |
-| 5    |            |         |        |              |
-| 6    |            |         |        |              |
-| 7    |            |         |        |              |
-| 8    |            |         |        |              |
-| 9    |            |         |        |              |
-| 10   |            |         |        |              |
-| 11   |            |         |        |              |
-| 12   |            |         |        |              |
-| 13   |            |         |        |              |
-| 14   |            |         |        |              |
-| 15   |            |         |        |              |
+| 5    | Warner     | F       | Acción | 2            |
+| 6    | Disney     | M       | Terror | 3            |
+| 7    | Universal  | F       | Terror | 3            |
+| 8    | Disney     | M       | Drama  | 1            |
+| 9    | Warney     | F       | Acción | 2            |
+| 10   | Warner     | M       | Acción | 1            |
+| 11   | Disney     | F       | Drama  | 2            |
+| 12   | Universal  | F       | Terror | 3            |
+| 13   | Warner     | F       | Terror | 3            |
+| 14   | Disney     | M       | Acción | 2            |
+| 15   | Universal  | M       | Drama  | 1            |
 
 Calcule la calificación que otorgará un usuario $F$ a una película de Acción producida Warner.
 $$
@@ -445,30 +499,30 @@ $$
 
 ## Ejercicio
 
-|      |      |      |      |      |      |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
-|      |      |      |      |      |      |
+| #    | Director   | Productora | Usuario | Género | Calificación |
+| ---- | ---------- | ---------- | ------- | ------ | ------------ |
+| 1    | Hnos coen  | Universal  | F       | Terror | 1            |
+| 2    | Del tor    | Universal  | M       | Acción | 3            |
+| 3    | Bañuel     | Warner     | F       | Drama  | 2            |
+| 4    | Bañuel     | Disney     | M       | Drama  | 2            |
+| 5    | Hnos. Coen | Warner     | F       | Acción | 2            |
+| 6    | Del toro   | Disney     | M       | Terror | 3            |
+| 7    | Del toro   | Universal  | F       | Terror | 3            |
+| 8    | Hnos. Coen | Disney     | M       | Drama  | 1            |
+| 9    | Bañuel     | Warner     | F       | Acción | 2            |
+| 10   | Del toro   | Warner     | M       | Acción | 1            |
+| 11   | Bañuel     | Disney     | F       | Drama  | 2            |
+| 12   | Hnos. Coen | Universal  | F       | Terror | 3            |
+| 13   | Hnos. Coen | Warner     | F       | Terror | 3            |
+| 14   | Del Toro   | Disney     | M       | Acción | 2            |
+| 15   | Bañuel     | Universal  | M       | Drama  | 1            |
+| 16   | Bañuel     | Warner     | M       | Acción | 1            |
+| 17   | Del Toro   | Warner     | F       | Acción | 2            |
+| 18   | Bañuel     | Disney     | M       | Drama  | 3            |
+| 19   | Hnos. Coen | Universal  | M       | Terror | 1            |
+| 20   | Hnos. Coen | Warner     | F       | Terror | 1            |
+| 21   | Del Toro   | Disney     | F       | Acción | 2            |
+| 22   | Bañuel     | Uiversal   | M       | Drama  | 3            |
 
 $$
 P(1) \cdot P(M|1) \cdot P(Terror|1) \cdot P(Universal | 1) \cdot P(Bañuel | 1) \\
