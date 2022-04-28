@@ -1,0 +1,17 @@
+3,16
+Categoria,Calificacion,Usuario
+terror,3,F
+terror,1,M
+terror,2,F
+terror,3,F
+comedia,5,M
+comedia,1,M
+comedia,1,F
+comedia,2,F
+comedia,2,F
+comedia,2,M
+comedia,2,M
+romance,2,M
+romance,3,M
+romance,3,F
+romance,4,M

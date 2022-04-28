@@ -1,0 +1,40 @@
+/*Pseudocódigo*/
+inicio main()
+	Datos < = cargarDatos(nombre)
+
+	Condiciones <= input()
+	Cuestion	<= input()
+
+	real 	probabilidad = 1.0, masProbable = 0.0
+	cadena  Argumento = "No hay coincidencias", Objetivo, Regla 
+
+	por_cada Objetivo en obten_coleccion(Cuestion) realiza:
+
+		probabilidad = obten_Probabilidad(Datos,Objetivo)
+
+		por_cada Regla en obten_coleccion(Condiciones) realiza:
+
+			probabilidad = probabilidad * obten_Probabilidad(Datos,Objetivo,Regla)
+
+		fin_bucle
+
+		si (probabilidad > masProbable) entonces:
+
+			mas probable <= probabilidad
+			Argumento	 <= Objetivo
+
+		fin_condicion
+
+	fin_bucle
+
+	imprimir(Argumento)
+
+fin_main
+
+inicio obten_Probabilidad(Datos,Objetivo):
+	retorna	veces_En_Categoria(Datos,Objetivo) / (Datos.Altura - 1)
+fin_obten_Probabilidad
+
+inicio obten_Probabilidad(Datos,Objetivo,Regla):
+	retorna	coincidencia(Datos,Objetivo,Regla) / veces_En_Categoria(Datos,Objetivo)
+fin_obten_Probabilidad
