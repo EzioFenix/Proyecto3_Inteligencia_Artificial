@@ -80,10 +80,6 @@ inicio obten_Probabilidad(Datos,Objetivo,Regla):
 fin_obten_Probabilidad
 ```
 
-
-
-## Explicación
-
 # Experimentos
 
 ## Baja dificultad
