@@ -224,6 +224,8 @@ float testPresicion(std::string* matrix) {
 }
 
 int main() {
+	std::chrono::system_clock::time_point before, after;
+	std::chrono::duration<float, std::milli> time;
 	char opcion; std::string* data = nullptr; std::string id, aux;
 	std::cout << "Valles Sense by DynamicWare V1.10.15" << std::endl;
 	do {
@@ -238,19 +240,26 @@ int main() {
 		case '1':
 			std::cout << "Cargar Hoja de Datos...\n";
 			std::cout << "Inserte el nombre del archivo: ";
-			//std::cin >> id; 
-			data = getDataBase("PruebaSencilla.txt");
+			std::cin >> id; data = getDataBase(id);
 			std::cout << std::endl;
 			break;
 		case '2':
 			std::cout << "Preguntar...\nInserte condiciones con el formato [Clasificacion]:[Objetivo],*\n";
 			std::cin >> id; std::cout << "Inserte la cuestion "; std::cin >> aux;
 			printData(data);
+			before = std::chrono::system_clock::now();
 			std::cout << "Resultado posible: " << masProbable(data,id,aux);
+			after = std::chrono::system_clock::now();
+			time = after - before;
+			std::cout << "Realizado en: " << time.count() << " milisegundos";
 			std::cin >> aux;
 			break;
 		case '3':
+			before = std::chrono::system_clock::now();
 			std::cout << "La presicion es del...\t" << testPresicion(data) << "%\n";
+			after = std::chrono::system_clock::now();
+			time = after - before;
+			std::cout << "Realizado en: " << time.count() << " milisegundos";
 			std::cin >> aux;
 			break;
 		case '4':
