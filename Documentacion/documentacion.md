@@ -53,19 +53,78 @@ Aquí se recopila, pdf´s dados por el profesor y externos con los cuales se bas
 
 # Capítulo 1 Introducción
 
-La probabilidad es una rama de las matemáticas  surgido en 1553
-
-<< Término surge en en el año 1553 con el escrito realizado por Gerolamo Cardano (1501-1576), en el que la menciona por primera vez. En cambio, Pierre Fermat (1601-1665) y Blaise Pascal (1623-1662) son conocidos como los padres de la teoría de la probabilidad debido las grandes aportaciones que realizaron sobre este campo>>
+La probabilidad es una rama de las matemáticas  surgido en 1553 de la mano de Gerolamo Cardano (1501-1576). Por otra parte << Pierre Fermat (1601-1665) y Blaise Pascal (1623-1662) son conocidos como los padres de la teoría de la probabilidad debido las grandes aportaciones que realizaron sobre este campo>>
 
 <<Andréi Kolmogorov. Fue el creador de la obra «Los fundamentos de la Teoría de la Probabilidad» en la que expuso la axiomática de Kolmogorov y le hizo ser reconocido como una eminencia de la probabilidad>>.
 
-## Definición del problema
+La probabilidad busca encontrar el nivel de certeza de que ocurra un evento dado, por lo cual existe un porcentaje asociado a ello, lo cual puede ir desde un  0% hasta un 100%. Cuando el evento se aproxima a la cantidad más alt, significa que es muy posible que suceda el evento, por  otro lado, cuando es cercano a 0 significa que es probable que el evento no suceda.
 
-## Clasificación Bayesiana
+Ahora un concepto más avanzado es el calculo de probabilidades dado por un suceso anterior, es decir que tan probable es que suceda un evento dado por que ocurra haya ocurrido otro evento. Para calcular dicha probabilidad utilizamos el **teorema de Bayes** el cual nos proporciona una forma fácil de calcular dicha probabilidad.
 
-#  Solución
+## Conceptos
 
-## Pseudocódigo
+**Definición** (Regla de la adición).
+
+​	
+$$
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+$$
+
+
+**Definición 9 **(Probabilidad condicional) . La probabilidad condicional de un evento $B$ dado otro evento $A$, escrita $P(B|A)$, se define 
+$$
+P(B|A)=\frac{P (A\cap B)}{P(A)}
+$$
+
+
+**Definición 13** (Clasificación Bayesiana). Considere el espacio muestra compuesto por los siguientes vectores:
+
+![image-20220503051730015](img/documentacion/image-20220503051730015.png)
+
+El modelo de clasificación Bayesiana se define como sigue: 
+$$
+\hat{y}=\max \left\{P\left(y_{i}\right) P\left(x_{1} \mid y_{i}\right) P\left(x_{2} \mid y_{i}\right) \ldots P\left(x_{n} \mid y_{i}\right) \mid i=1, \ldots, m\right\}
+$$
+
+## 
+
+## Problema
+
+Entrada: un espacio muestra, nuevos datos para clasificar.
+
+Salida: la clasificación de los datos.
+
+Dado un vector de condiciones $\vec{Q}$ que contiene los valores $[q_1,q_2,...,q_j]$ para $j$ condiciones, a los cuales debe igualarse $Am_i$, obtener $Y_{max}(\vec{Q})$ que es la probabilidad más grande para dicho vector.
+
+**Ejemplo.** Considere la siguiente base de datos.
+
+| #    | Usuario | Género | Calificación |
+| ---- | ------- | ------ | ------------ |
+| 1    | F       | Terror | 1            |
+| 2    | M       | Acción | 3            |
+| 3    | F       | Drama  | 2            |
+| 4    | M       | Drama  | 2            |
+| 5    | F       | Acción | 2            |
+| 6    | M       | Terror | 3            |
+| 7    | F       | Terror | 3            |
+| 8    | M       | Drama  | 1            |
+| 9    | F       | Acción | 2            |
+
+Calcule la calificación que le pondría un usuario $M$ a una película de Drama.
+$$
+\begin{aligned}
+&P(1) P(\mathrm{M} \mid 1) P(\text { Drama } \mid 1)=2 / 9 * 1 / 2 * 1 / 2=1 / 18 \\
+&P(2) P(\mathrm{M} \mid 2) P(\text { Drama } \mid 2)=4 / 9 * 1 / 4 * 1 / 2=1 / 18 \\
+&P(3) P(\mathrm{M} \mid 3) P(\text { Drama } \mid 3)=1 / 3 * 2 / 3 * 0=0
+\end{aligned}
+$$
+En este caso $Y_{max}(\vec{Q})=1/18$, ya que es la mayor probabilidad, con las condiciones que se le dierron 
+
+# Capítulo 2 Desarrollo
+
+##  Solución
+
+### Pseudocódigo
 
 ```python
 inicio main():
@@ -109,25 +168,88 @@ inicio obten_Probabilidad(Datos,Objetivo,Regla):
 fin_obten_Probabilidad
 ```
 
-# Experimentos
+## Experimentos
 
-## Baja dificultad
+Por cada nivel de dificultad usaremos un conjunto de datos (data-set) y el problema cambiará de lo que se esta preguntado, en este caso serán 3 preguntas diferentes acerca de la probabilidad.
 
-### Problema 1
+### Baja dificultad
 
-### Problema 2
+Considere la siguiente base de datos (tomada de la pág. 8 del texto proporcionado por el profesor).
 
-### Problema 3
+> Puedes encontrar el archivo como data-set1.csv en la carpeta de codigo
 
-## Media dificultad
+| Género | Calificación |
+| ------ | ------------ |
+| Terror | 1            |
+| Acción | 3            |
+| Drama  | 2            |
+| Drama  | 2            |
+| Acción | 2            |
+| Terror | 3            |
+| Teror  | 3            |
+| Drama  | 1            |
+| Acción | 2            |
 
-### Problema 1
+#### Problema 1
 
-### Problema 2
+#### Problema 2
 
-### Problema 3
+#### Problema 3
 
-## Alta dificultad
+### Media dificultad
+
+| order_no            | order_date                      | buyer      | ship_city    | ship_state        | sku               | description                                                  | quantity | item_total | shipping_fee | cod              | order_status       |
+| ------------------- | ------------------------------- | ---------- | ------------ | ----------------- | ----------------- | ------------------------------------------------------------ | -------- | ---------- | ------------ | ---------------- | ------------------ |
+| 405-9763961-5211537 | Sun, 18 Jul, 2021, 10:38 pm IST | Mr.        | CHANDIGARH,  | CHANDIGARH        | SKU: 2X-3C0F-KNJE | 100% Leather Elephant Shaped Piggy Coin Bank \| Block Printed  West Bengal Handicrafts (Shantiniketan Art) \| Money Bank for Kids \|  Children's Gift Ideas | 1        | ₹449.00    |              |                  | Delivered to buyer |
+| 404-3964908-7850720 | Tue, 19 Oct, 2021, 6:05 pm IST  | Minam      | PASIGHAT,    | ARUNACHAL PRADESH | SKU: DN-0WDX-VYOT | Women's Set of 5 Multicolor Pure Leather Single Lipstick Cases  with Mirror, Handy and Compact Handcrafted Shantiniketan Block Printed  Jewelry Boxes | 1        | ₹449.00    | ₹60.18       |                  | Delivered to buyer |
+| 171-8103182-4289117 | Sun, 28 Nov, 2021, 10:20 pm IST | yatipertin | PASIGHAT,    | ARUNACHAL PRADESH | SKU: DN-0WDX-VYOT | Women's Set of 5 Multicolor Pure Leather Single Lipstick Cases  with Mirror, Handy and Compact Handcrafted Shantiniketan Block Printed  Jewelry Boxes | 1        | ₹449.00    | ₹60.18       |                  | Delivered to buyer |
+| 405-3171677-9557154 | Wed, 28 Jul, 2021, 4:06 am IST  | aciya      | DEVARAKONDA, | TELANGANA         | SKU: AH-J3AO-R7DN | Pure 100% Leather Block Print Rectangular Jewelry Box with  Mirror \| Button Closure Multiple Utility Case (Shantiniketan Handicrafts)  (Yellow) | 1        |            |              | Cash On Delivery | Delivered to buyer |
+| 402-8910771-1215552 | Tue, 28 Sept, 2021, 2:50 pm IST | Susmita    | MUMBAI,      | MAHARASHTRA       | SKU: KL-7WAA-Z82I | Pure Leather Sling Bag with Multiple Pockets and Adjustable  Strap \| Shantiniketan Block Print Cross-Body Bags for Women (1 pc) (Brown) | 1        | ₹1,099.00  | ₹84.96       |                  | Delivered to buyer |
+| 406-9292208-6725123 | Thu, 17 Jun, 2021, 9:12 pm IST  | Subinita   | HOWRAH,      | WEST BENGAL       | SKU: HH-FOWV-5YWO | Women's Trendy Pure Leather Clutch Purse \| Leather Zipper  Wallet | 1        | ₹200.00    |              |                  | Delivered to buyer |
+
+**Context**
+
+- Title:  Amazon Seller - Order Status Prediction
+- About this file: BL is a small leather products business which has recently started selling its products on Amazon. Currently, it has around 40 SKUs registered in the Indian Marketplace. Over the past few months, it has incurred some loss due to return orders. Now, BL seeks help to predict the likelihood of a new order being rejected. This would help them to take necessary actions and subsequently reduce the loss.
+
+**Contexto**
+
+- Título: Vendedor de Amazon - Predicción del estado del pedido
+- Acerca de este archivo:  BL es un pequeño negocio de productos de cuero que recientemente ha comenzado a vender sus productos en Amazon. Actualmente, tiene alrededor de 40 SKU registrados en el mercado indio. En los últimos meses, ha incurrido en algunas pérdidas debido a los pedidos de devolución. Ahora, BL busca ayuda para predecir la probabilidad de que una nueva orden sea rechazada. Esto les ayudaría a tomar las medidas necesarias y, posteriormente, a reducir la pérdida
+
+- Son   172 registros por  12 columnas
+
+[Link Kaggle]([Vendedor de Amazon - | de predicción del estado del pedido Kaggle](https://www.kaggle.com/datasets/pranalibose/amazon-seller-order-status-prediction))
+
+#### Problema 1
+
+#### Problema 2
+
+#### Problema 3
+
+### Alta dificultad
+
+| title                                          | artist     | top genre   | year released | added      | bpm  | nrgy | dnce | dB   | live | val  | dur  | acous | spch | pop  | top year | artist type |
+| ---------------------------------------------- | ---------- | ----------- | ------------- | ---------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----- | ---- | ---- | -------- | ----------- |
+| STARSTRUKK (feat. Katy Perry)                  | 3OH!3      | dance pop   | 2009          | 2022‑02‑17 | 140  | 81   | 61   | -6   | 23   | 23   | 203  | 0     | 6    | 70   | 2010     | Duo         |
+| My First Kiss (feat. Ke$ha)                    | 3OH!3      | dance pop   | 2010          | 2022‑02‑17 | 138  | 89   | 68   | -4   | 36   | 83   | 192  | 1     | 8    | 68   | 2010     | Duo         |
+| I Need A Dollar                                | Aloe Blacc | pop soul    | 2010          | 2022‑02‑17 | 95   | 48   | 84   | -7   | 9    | 96   | 243  | 20    | 3    | 72   | 2010     | Solo        |
+| Airplanes (feat. Hayley Williams of  Paramore) | B.o.B      | atl hip hop | 2010          | 2022‑02‑17 | 93   | 87   | 66   | -4   | 4    | 38   | 180  | 11    | 12   | 80   | 2010     | Solo        |
+| Nothin' on You (feat. Bruno Mars)              | B.o.B      | atl hip hop | 2010          | 2022‑02‑17 | 104  | 85   | 69   | -6   | 9    | 74   | 268  | 39    | 5    | 79   | 2010     | Solo        |
+
+**Context**
+
+- Title: Spotify Top 100 Songs of 2010-2019
+- About this file: Top 100 songs of each year on Spotify from 2010 to 2019.
+
+**Contexto**
+
+- Título: Las 100 mejores canciones de Spotify de 2010-2019
+- Acerca de este archivo:  Las 100 mejores canciones de cada año en Spotify de 2010 a 2019.
+
+- Son  registros 1000 por 17 columnas
+
+[Link Kaggle]([Las 100 mejores canciones de Spotify de 2010-2019 | Kaggle](https://www.kaggle.com/datasets/muhmores/spotify-top-100-songs-of-20152019))
 
 ### Problema 1
 
@@ -137,33 +259,44 @@ fin_obten_Probabilidad
 
 ## Sin solución
 
-# Capítulo 1  Introducción 
+**Context**
 
+- Title: Walmart Sales Forecast
+- About this file:This file contains additional data related to the store, department, and regional activity for the given dates. It contains the following fields:
 
+**Contexto**
 
-# Capítulo 2 Desarrollo
+- Título: Pronóstico de ventas de Walmart
+- Acerca de este archivo: este archivo contiene datos adicionales relacionados con la actividad de la tienda, el departamento y la región para las fechas indicadas. Contiene los siguientes campos:
 
-## Idea de desarrollo del programa
+| Store | Dept | Date       | Weekly_Sales | IsHoliday |
+| ----- | ---- | ---------- | ------------ | --------- |
+| 1     | 1    | 05/02/2010 | 24924.5      | FALSE     |
+| 1     | 1    | 12/02/2010 | 46039.49     | TRUE      |
+| 1     | 1    | 19/02/2010 | 41595.55     | FALSE     |
+| 1     | 1    | 26/02/2010 | 19403.54     | FALSE     |
+| 1     | 1    | 05/03/2010 | 21827.9      | FALSE     |
+| 1     | 1    | 12/03/2010 | 21043.39     | FALSE     |
+| 1     | 1    | 19/03/2010 | 22136.64     | FALSE     |
+| 1     | 1    | 26/03/2010 | 26229.21     | FALSE     |
+| 1     | 1    | 02/04/2010 | 57258.43     | FALSE     |
+| 1     | 1    | 09/04/2010 | 42960.91     | FALSE     |
+| 1     | 1    | 16/04/2010 | 17596.96     | FALSE     |
+| 1     | 1    | 23/04/2010 | 16145.35     | FALSE     |
+| 1     | 1    | 30/04/2010 | 16555.11     | FALSE     |
+| 1     | 1    | 07/05/2010 | 17413.94     | FALSE     |
+| 1     | 1    | 14/05/2010 | 18926.74     | FALSE     |
+| ...   | ...  | ...        | ...          | ...       |
 
-## Casos de prueba
+- Son 421,571 registros por 5 columnas
 
-### Triviales (1 caso)
-
-### Fáciles (3 casos)
-
-### Media (3 casos)
-
-### Difíciles ( 3 casos )
-
-### Sin solución (1 caso)
-
-### Código
-
-## Explicación código
+[Link Kaggle](https://www.kaggle.com/datasets/aslanahmedov/walmart-sales-forecast?titleType=dataset-downloads&showDatasetDownloadSkip=False&messageId=datasetsWelcome&returnUrl=%2Fdatasets%2Faslanahmedov%2Fwalmart-sales-forecast%3Fresource%3Ddownload)
 
 # Capítulo 3 Conclusión
 
 ## Barrera Peña Víctor Miguel
+
+- Se cumplió de acuerdo a lo esperado el proyecto, presento una dificultad considerable, sobre todo la teoría matemática, sin embargo fue posible la creación del programa utilizando la probabilidad condicional usando conjuntos de datos reales, con lo cual apenas se puede vislumbrar la verdadera introducción a la inteligencia artificial, mediante la selección de "comportamiento inteligentes", como podría ser, que acción realizar de acuerdo a eventos pasados sucedidos, constituye un avance que se verá incrementado con el siguiente proyecto.
 
 ## Espino de Horta Joaquín Gustavo
 
@@ -428,11 +561,55 @@ P\left(A \cap B^{c}\right) & P\left((A \cup B)^{c}\right) & P\left(A^{c} \cup B\
 \end{array}
 $$
 
-**Definición 9 **(Probabilidad condicional) . La proba
+**Definición 9 **(Probabilidad condicional) . La probabilidad condicional de un evento $B$ dado otro evento $A$, escrita $P(B|A)$, se define 
+$$
+P(B|A)=\frac{P (A\cap B)}{P(A)}
+$$
+
 
 # 8
 
+- Calcule la probabilidad de que el inspector detecte un objeto defectuso.
+- Si un objeto es clasificado libre de defectos, determine la probabilidad de que efectivamente lo esté.
+
+**Definición 13** (Clasificación Bayesiana). Considere el espacio muestra compuesto por los siguientes vectores:
+
+![image-20220503051730015](img/documentacion/image-20220503051730015.png)
+
+El modelo de clasificación Bayesiana se define como sigue: 
+$$
+\hat{y}=\max \left\{P\left(y_{i}\right) P\left(x_{1} \mid y_{i}\right) P\left(x_{2} \mid y_{i}\right) \ldots P\left(x_{n} \mid y_{i}\right) \mid i=1, \ldots, m\right\}
+$$
+
+## Ejemplo
+
+Considere la siguiente base de datos
+
+| Género | Calificación |
+| ------ | ------------ |
+| Terror | 1            |
+| Acción | 3            |
+| Drama  | 2            |
+| Drama  | 2            |
+| Acción | 2            |
+| Terror | 3            |
+| Teror  | 3            |
+| Drama  | 1            |
+| Acción | 2            |
+
+
+
 - Calcule la probabilidad de que el inspector detecte un objeto defecuso
+
+La calificación de una película de acción se puede predecir de la siguiente forma:
+$$
+\begin{aligned}
+&P(1) P(\text { Acción } \mid 1)=2 / 9 * 0=0 \\
+&P(2) P(\text { Acción } \mid 2)=4 / 9 * 1 / 2=2 / 9 \\
+&P(3) P(\text { Acción } \mid 3)=1 / 3 * 1 / 3=1 / 9
+\end{aligned}
+$$
+por lo tanto, la calificación de una película de acción será 2.
 
 # 9
 
@@ -458,32 +635,6 @@ $$
 &P(3) P(\mathrm{M} \mid 3) P(\text { Drama } \mid 3)=1 / 3 * 2 / 3 * 0=0
 \end{aligned}
 $$
-Entonces el usuario califica con $2$  o $1$ a la película de Drama.
-
-## Ejercicio
-
-Implemente un algoritmo para el modelo de clasificación Bayesiana.
-
-# Clase de hoy
-
-**Ejemplo.** Considere la siguiente base de datos.
-
-| Usuario | Género | Calificación |
-| ------- | ------ | ------------ |
-| F       | Terror | 1            |
-| M       | Acción | 3            |
-| F       | Drama  | 2            |
-| M       | Drama  | 2            |
-| F       | Acción | 2            |
-| M       | Terror | 3            |
-|         |        |              |
-|         |        |              |
-|         |        |              |
-
-
-
-## Ejemplo
-
 ## Ejercicios
 
 Considere la siguiente base de datos.
@@ -522,11 +673,15 @@ P(3) \cdot P(F|3) \cdot P(A|3) \cdot P(W | 3) \\
 =\frac{5}{15} \cdot \frac{3}{5} \cdot \frac{1}{5} \cdot \frac{1}{5} = \frac{15}{1,875}=0.0026\overline{6}
 $$
 
+# 10
+
 ## Ejercicio
+
+- Considere la siguiente base de datos.
 
 | #    | Director   | Productora | Usuario | Género | Calificación |
 | ---- | ---------- | ---------- | ------- | ------ | ------------ |
-| 1    | Hnos coen  | Universal  | F       | Terror | 1            |
+| 1    | Hnos. Coen | Universal  | F       | Terror | 1            |
 | 2    | Del tor    | Universal  | M       | Acción | 3            |
 | 3    | Bañuel     | Warner     | F       | Drama  | 2            |
 | 4    | Bañuel     | Disney     | M       | Drama  | 2            |
@@ -549,6 +704,10 @@ $$
 | 21   | Del Toro   | Disney     | F       | Acción | 2            |
 | 22   | Bañuel     | Uiversal   | M       | Drama  | 3            |
 
+Calcule la calificación que otorgará un usuario $M$ a una película de Terror, producida y dirigida por Bañuel.
+
+- Implemente un algoritmo para el modelo de clasificación Bayesiana.
+
 $$
 P(1) \cdot P(M|1) \cdot P(Terror|1) \cdot P(Universal | 1) \cdot P(Bañuel | 1) \\
 =\frac{7}{22} \cdot \frac{5}{7} \cdot \frac{3}{7} \cdot \frac{3}{7} \cdot \frac{2}{7} = \frac{45}{3773}=0.0119268
@@ -563,3 +722,9 @@ $$
 P(3) \cdot P(M|3) \cdot P(Terror|3) \cdot P(Universal | 3) \cdot P(Bañuel | 3) \\
 =\frac{7}{22} \cdot \frac{4}{7} \cdot \frac{4}{7} \cdot \frac{4}{7} \cdot \frac{2}{7} = \frac{896}{52,822}=0.0169626
 $$
+
+# Referencias
+
+- Barcenas, E. (s. f.). *Introducción a la probabilidad*. classrom. Recuperado 3 de mayo de 2022, de https://classroom.google.com/c/NDYyNTA3MDkxNDA2
+- Devore, J. L. *Probabilidad y estadística para ingeniería y ciencias/por Jay L. Devore* (No. 519 D4.).
+- Westreicher, G. (2021, 14 julio). *Probabilidad*. Economipedia. https://economipedia.com/definiciones/probabilidad.html
