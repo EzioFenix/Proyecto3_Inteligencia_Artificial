@@ -192,7 +192,110 @@ Considere la siguiente base de datos (tomada de la pág. 8 del texto proporciona
 
 #### Problema 1
 
+Que usuario le pondría 1 a una categoría de terror
+
+```
+Inserte condiciones con el formato [Clasificacion]:[Objetivo],*
+|       Categoria       |       Calificacion    |       Usuario |
+Categoria:terror,Calificacion:1
+Inserte la cuestion Usuario
+|       Categoria       |       Calificacion    |       Usuario |
+|       terror  |       3       |       F       |
+|       terror  |       1       |       M       |
+|       terror  |       2       |       F       |
+|       terror  |       3       |       F       |
+|       terror  |       3       |       M       |
+|       comedia |       5       |       M       |
+|       comedia |       1       |       M       |
+|       comedia |       1       |       F       |
+|       comedia |       2       |       F       |
+|       comedia |       2       |       F       |
+|       comedia |       2       |       M       |
+|       comedia |       2       |       M       |
+|       romance |       2       |       M       |
+|       romance |       2       |       M       |
+|       romance |       3       |       M       |
+|       romance |       3       |       F       |
+|       romance |       4       |       M       |
+|       terror  |       3       |       F       |
+|       comedia |       2       |       M       |
+|       romance |       3       |       M       |
+Para F: (8/20)*(4/6)*(1/3) = 0.0888889
+Para M: (12/20)*(2/6)*(2/3) = 0.133333
+Resultado posible: M    Probabilidad: 0.133333
+Realizado en: 19.6674 milisegundosd
+```
+
+
+
 #### Problema 2
+
+Siendo usuario masculino, de calificación 3  ¿Qué categoría seria?
+
+```
+Cargar Hoja de Datos...
+Inserte el nombre del archivo: prueba1_facil.csv
+Se han leido los datos correctamente...
+
+Seleccione una opcion:
+1.- Cargar Hoja de Datos
+2.- Preguntar
+3.- Test de presicion
+4.- Salir
+2
+Preguntar...
+Inserte condiciones con el formato [Clasificacion]:[Objetivo],*
+|       Categoria       |       Calificacion    |       Usuario |
+Usuario:M,Calificacion:3
+Inserte la cuestion Categoria
+|       Categoria       |       Calificacion    |       Usuario |
+|       terror  |       3       |       F       |
+|       terror  |       1       |       M       |
+|       terror  |       2       |       F       |
+|       terror  |       3       |       F       |
+|       terror  |       3       |       M       |
+|       comedia |       5       |       M       |
+|       comedia |       1       |       M       |
+|       comedia |       1       |       F       |
+|       comedia |       2       |       F       |
+|       comedia |       2       |       F       |
+|       comedia |       2       |       M       |
+|       comedia |       2       |       M       |
+|       romance |       2       |       M       |
+|       romance |       2       |       M       |
+|       romance |       3       |       M       |
+|       romance |       3       |       F       |
+|       romance |       4       |       M       |
+|       terror  |       3       |       F       |
+|       comedia |       2       |       M       |
+|       romance |       3       |       M       |
+Para terror: (6/20)*(2/12)*(4/7) = 0.0285714
+Para comedia: (8/20)*(5/12)*(0/7) = 0
+Para romance: (6/20)*(5/12)*(3/7) = 0.0535714
+Resultado posible: romance      Probabilidad: 0.053571
+Realizado en: 24.0973 milisegundos
+```
+
+Test de precisión
+
+```
+Especulacion: No hay coincidencia       | Realidad: romance
+Especulacion: 2 | Realidad: 4
+Especulacion: No hay coincidencia       | Realidad: M
+Especulacion: terror    | Realidad: terror
+Especulacion: 3 | Realidad: 3
+Especulacion: F | Realidad: F
+Especulacion: comedia   | Realidad: comedia
+Especulacion: 2 | Realidad: 2
+Especulacion: M | Realidad: M
+Especulacion: terror    | Realidad: romance
+Especulacion: 2 | Realidad: 3
+Especulacion: M | Realidad: M
+La presicion es del...  58.3333%
+Realizado en: 33.1889 milisegundos
+```
+
+
 
 #### Problema 3
 
@@ -239,15 +342,17 @@ Considere la siguiente base de datos (tomada de la pág. 8 del texto proporciona
 
 **Context**
 
-- Title: Spotify Top 100 Songs of 2010-2019
-- About this file: Top 100 songs of each year on Spotify from 2010 to 2019.
+- Title:  Date Fruit Datasets
+- About this file:
+
+A great number of fruits are grown around the world, each of which has various types. The factors that determine the type of fruit are the external appearance features such as color, length, diameter, and shape. The external appearance of the fruits is a major determinant of the fruit type. Determining the variety of fruits by looking at their external appearance may necessitate expertise, which is time-consuming and requires great effort. The aim of this study is to classify the types of date fruit, that are, Barhee, Deglet Nour, Sukkary, Rotab Mozafati, Ruthana, Safawi, and Sagai by using three different machine learning methods. In accordance with this purpose, 898 images of seven different date fruit types were obtained via the computer vision system (CVS). Through image processing techniques, a total of 34 features, including morphological features, shape, and color, were extracted from these images. First, models were developed by using the logistic regression (LR) and artificial neural network (ANN) methods, which are among the machine learning methods. Performance results achieved with these methods are 91.0% and 92.2%, respectively. Then, with the stacking model created by combining these models, the performance result was increased to 92.8%. It has been concluded that machine learning methods can be applied successfully for the classification of date fruit types.
 
 **Contexto**
 
-- Título: Las 100 mejores canciones de Spotify de 2010-2019
-- Acerca de este archivo:  Las 100 mejores canciones de cada año en Spotify de 2010 a 2019.
+- Título: Conjuntos de datos de frutas de dátiles
+- Acerca de este archivo:  
 
-- Son  registros 1000 por 17 columnas
+En todo el mundo se cultiva una gran cantidad de frutas, cada una de las cuales tiene varios tipos. Los factores que determinan el tipo de fruto son las características de la apariencia externa como el color, la longitud, el diámetro y la forma. La apariencia externa de los frutos es un determinante importante del tipo de fruto. Determinar la variedad de frutas observando su apariencia externa puede requerir experiencia, lo que lleva mucho tiempo y requiere un gran esfuerzo. El objetivo de este estudio es clasificar los tipos de dátiles, es decir, Barhee, Deglet Nour, Sukkary, Rotab Mozafati, Ruthana, Safawi y Sagai, utilizando tres métodos diferentes de aprendizaje automático. De acuerdo con este propósito, se obtuvieron 898 imágenes de siete tipos diferentes de frutos de dátiles a través del sistema de visión por computadora (CVS). A través de técnicas de procesamiento de imágenes, un total de 34 características, incluidas las características morfológicas, la forma y el color, se extrajeron de estas imágenes. Primero, se desarrollaron modelos utilizando los métodos de regresión logística (LR) y red neuronal artificial (ANN), que se encuentran entre los métodos de aprendizaje automático. Los resultados de rendimiento logrados con estos métodos son 91,0% y 92,2%, respectivamente. Luego, con el modelo de apilamiento creado mediante la combinación de estos modelos, el resultado de rendimiento se incrementó al 92,8 %. Se ha concluido que los métodos de aprendizaje automático se pueden aplicar con éxito para la clasificación de tipos de frutos de dátil. respectivamente. Luego, con el modelo de apilamiento creado mediante la combinación de estos modelos, el resultado de rendimiento se incrementó al 92,8 %. Se ha concluido que los métodos de aprendizaje automático se pueden aplicar con éxito para la clasificación de tipos de frutos de dátil. respectivamente. Luego, con el modelo de apilamiento creado mediante la combinación de estos modelos, el resultado de rendimiento se incrementó al 92,8 %. Se ha concluido que los métodos de aprendizaje automático se pueden aplicar con éxito para la clasificación de tipos de frutos de dátil.
 
 [Link Kaggle]([Las 100 mejores canciones de Spotify de 2010-2019 | Kaggle](https://www.kaggle.com/datasets/muhmores/spotify-top-100-songs-of-20152019))
 
@@ -300,7 +405,7 @@ Considere la siguiente base de datos (tomada de la pág. 8 del texto proporciona
 
 ## Espino de Horta Joaquín Gustavo
 
-
+- 
 
 # Anexo (teoría)
 
