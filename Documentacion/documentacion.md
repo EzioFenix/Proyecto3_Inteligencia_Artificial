@@ -51,7 +51,15 @@ Aquí se recopila, pdf´s dados por el profesor y externos con los cuales se bas
 - License (Licencia) la linecia es GNU.
 - README.md Es el mismo archivo que esta leyendo, solo que en formato `.md` para poder leerlo desde Github.
 
-# Definición del problema
+# Capítulo 1 Introducción
+
+La probabilidad es una rama de las matemáticas  surgido en 1553
+
+<< Término surge en en el año 1553 con el escrito realizado por Gerolamo Cardano (1501-1576), en el que la menciona por primera vez. En cambio, Pierre Fermat (1601-1665) y Blaise Pascal (1623-1662) son conocidos como los padres de la teoría de la probabilidad debido las grandes aportaciones que realizaron sobre este campo>>
+
+<<Andréi Kolmogorov. Fue el creador de la obra «Los fundamentos de la Teoría de la Probabilidad» en la que expuso la axiomática de Kolmogorov y le hizo ser reconocido como una eminencia de la probabilidad>>.
+
+## Definición del problema
 
 ## Clasificación Bayesiana
 
