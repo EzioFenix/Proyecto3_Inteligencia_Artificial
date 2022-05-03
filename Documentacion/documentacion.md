@@ -12,7 +12,7 @@ Participantes:
 Profesor: Dr. Ismael Everardo Barcenas Patiño
 Título : Proyecto 
 Subtítulo : Inferencia bayesiana
-Fecha entrega: 05/05/2022
+Fecha entrega: 03/05/2022
 
 ```
 
@@ -23,12 +23,33 @@ Fecha entrega: 05/05/2022
 ├── Codigo
 ├── Diapositivas
 ├── Documentacion
-├── LICENSE
 ├── Material_ayuda
-└── README.md
+├── LICENSE (Archivo)
+└── README.md (Archivo)
 ```
 
+Aquí mostramos la estructura de  los archivos contenidos en el repositorio para que puedas navegar dentro.
 
+## Código
+
+Aquí se encuentra el código  en `C++`  y el `.exe` para poder ejecutarlo, esta compilado para maquina de `64 bits` en sistema Windows pero esta el código disponible para su compilación.
+
+## Diapositivas
+
+Sólo se encuentra el PDF de las diapositivas y el código `.tex`.
+
+## Documentación
+
+Se encuentra una documentación del programa escrito en C++ y por tanto es posible exportar un `.html` que explica todas las funcioens
+
+## Material de ayuda
+
+Aquí se recopila, pdf´s dados por el profesor y externos con los cuales se basó para crear el proyecto, se acumulan aquí, ya que la duración de un archivo en la red tiene un tiempo limitado de vida y es posible que si se desea mejorar este proyecto a futuro o hacerle un fork, sería buena idea contar con el.
+
+## Archivos 
+
+- License (Licencia) la linecia es GNU.
+- README.md Es el mismo archivo que esta leyendo, solo que en formato `.md` para poder leerlo desde Github.
 
 # Definición del problema
 
