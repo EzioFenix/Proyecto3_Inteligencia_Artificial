@@ -1,9 +1,0 @@
-Conclusiones
-
-La producción de este proyecto fue relativamente sencilla, aprendido de los errores cometidos
-pudimos entregar en tiempo y forma complaciendo todas las pruebas que realizamos. El programa es exigente
-en cuanto al usuario, pues sus requisitos pueden producir errores.
-
-Se han realizado modificaciones que cubren los requisitos como el tiempo de ejecución así como las
-pruebas de precisión, el algoritmo puede ser facilmente adaptado a nuevos tipos de datos para el
-futuro proyecto de manipulación de imágenes.
